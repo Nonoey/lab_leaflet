@@ -1,0 +1,98 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My first Leaflet</title>
+  <!---Link leaflet css and javascript--->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+</head>
+<body>
+<br>
+<center><h2 style="color:#483D8B;">สถานอุทยานแห่งชาติ จังหวัดแพร่ 🏕️</h2></center>
+<br>
+<body bgcolor = '#F5FFFA' >
+
+<center><div id="map" style="width: 800px; height: 600px"></div></center>
+  <!--- set center and Link map--->
+<script>
+
+  var map = L.map('map').setView([18.242492123059648, 99.95374588791282],16);
+  mapLink ='<a href="http://openstreetmap.org">OpenStreetMap</a>';
+  L.tileLayer(
+    'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+     attribution: 'Map data &copy; ' + mapLink,
+     maxZoom: 18,
+    }).addTo(map);
+    var greenIcon = L.icon({
+    iconUrl: 'https://o.remove.bg/downloads/25ebcac0-4ca7-45c7-89a5-9f59f03ae4e1/%E0%B9%80%E0%B8%82%E0%B8%B2-removebg-preview.png',
+
+    iconSize:     [90, 60], // size of the icon
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+    var marker = L.marker([18.36937551264585, 100.35372143950048],
+  {
+    icon: greenIcon,
+    draggable:true,
+    title:'ถ้ำผานางคอย',
+    opacity:1.5
+  }
+)
+  .addTo(map)
+  .bindPopup("<b>ถ้ำผานางคอย</b>")
+  .openPopup();
+
+  var marker = L.marker([17.96786313244995, 99.59387199531895],
+{
+  icon: greenIcon,
+  draggable:true,
+  title:'อุทยานแห่งชาติ เวียงโกศัย',
+  opacity:1.5
+}
+)
+.addTo(map)
+.bindPopup("<b>อุทยานแห่งชาติ เวียงโกศัย</b>")
+.openPopup();
+
+var marker = L.marker([18.184049903968813, 100.20843898084426],
+{
+icon: greenIcon,
+draggable:true,
+title:'วนอุทยานแพะเมืองผี',
+opacity:1.5
+}
+)
+.addTo(map)
+.bindPopup("<b>วนอุทยานแพะเมืองผี</b>")
+.openPopup();
+
+var marker = L.marker([18.153740662908607, 99.98724053949721],
+{
+icon: greenIcon,
+draggable:true,
+title:'อุทยานแห่งชาติดอยผากลอง',
+opacity:1.5
+}
+)
+.addTo(map)
+.bindPopup("<b>อุทยานแห่งชาติดอยผากลอง</b>")
+.openPopup();
+
+var marker = L.marker([18.600284703772193, 100.14995708183383],
+{
+icon: greenIcon,
+draggable:true,
+title:'เขื่อนแก่งเสือเต้น',
+opacity:1.5
+}
+)
+.addTo(map)
+.bindPopup("<b>เขื่อนแก่งเสือเต้น</b>")
+.openPopup();
+
+
+</script>
+</body>
+</html>
